@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const sockerio = require('socket.io');
 const path = require('path');
+const Sockets = require('./sockets');
 
 class Server {
     constructor() {
@@ -16,7 +17,7 @@ class Server {
     }
 
     sockerConfigurations() {
-
+        new Sockets(this.io);
     }
 
     execute() {
